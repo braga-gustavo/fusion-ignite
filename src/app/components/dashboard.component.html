@@ -1,14 +1,6 @@
-<div class="chart-header">
-  <h2>Gráfico de vendas</h2>
-  <button (click)="toggleChartType()">
-    Alterar gráfico {{barChartType == 'bar' ? 'Pizza': 'Barras' }}
-  </button>
-</div>
-
-
-
 <section class="dashboard">
   <h1>Fusion Ignite - dashboard</h1>
+
   <div class="kpis">
     <div class="kpi"><strong> Vendas do mês: </strong> R$ {{ kpis.sales }}</div>
     <div class="kpi"><strong> Conversão: </strong> {{ kpis.conversion }}</div>
@@ -16,12 +8,19 @@
   </div>
 
   <div class="chart">
-    <canvas
-      baseChart
-      [data]="barChartData"
-      [type]="barChartType"
-      [options]="barChartOptions"
-    >
-    </canvas>
+    <h2>Gráfico de vendas</h2>
+    <div class="chart-header">
+      <button (click)="toggleChartType()">
+        Alterar gráfico para {{ barChartType == "bar" ? "Pizza" : "Barras" }}
+      </button>
+    </div>
   </div>
+
+  <canvas
+    baseChart
+    [data]="barChartData"
+    [type]="barChartType"
+    [options]="barChartOptions"
+  >
+  </canvas>
 </section>
