@@ -20,6 +20,10 @@ export class DashboardComponent {
   }
 
   barChartType: ChartType = 'bar';
+  toggleChartType(){
+    this.barChartType = this.barChartType === 'bar' ? 'pie' : 'bar';
+  }
+
   barChartData = {
     labels: KPIS.chartData.labels,
     datasets: [
