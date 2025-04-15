@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+  <h1>Fusion Ignite - dashboard</h1>
+  <div class="kpis">
+    <div class="kpi"><strong> Vendas do mês: </strong> R$ {{ kpis.sales }}</div>
+    <div class="kpi"><strong> Conversão: </strong> {{ kpis.conversion }}</div>
+    <div class="kpi"><strong> Leads:</strong> {{ kpis.leads }}</div>
+  </div>
+
+  <div class="chart">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [type]="barChartType"
+      [options]="barChartOptions"
+    >
+    </canvas>
+  </div>
+</section>
