@@ -11,16 +11,15 @@ import { KPIS } from '../data/kpis';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-
 export class DashboardComponent {
   kpis = KPIS;
 
   barChartOptions: ChartConfiguration['options'] = {
-    responsive:true
-  }
+    responsive: true,
+  };
 
   barChartType: ChartType = 'bar';
-  toggleChartType(){
+  toggleChartType() {
     this.barChartType = this.barChartType === 'bar' ? 'pie' : 'bar';
   }
 
@@ -30,7 +29,13 @@ export class DashboardComponent {
       {
         data: KPIS.chartData.values,
         label: 'Vendas (R$)',
-        backgroundColor: '#1976d2',
+        backgroundColor: [
+          '#8bc34a', // Verde limão suave
+          '#ff9800', // Laranja vibrante
+          '#e91e63', // Rosa choque
+          '#3f51b5', // Azul profundo
+          '#9c27b0', // Roxo intenso
+        ],
       },
     ],
   };
