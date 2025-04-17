@@ -56,12 +56,15 @@ export class DashboardComponent {
         data: KPIS.chartData.values,
         label: 'Vendas (R$)',
         backgroundColor: [
-          '#8bc34a', // Verde limão suave
-          '#ff9800', // Laranja vibrante
-          '#e91e63', // Rosa choque
-          '#3f51b5', // Azul profundo
-          '#9c27b0', // Roxo intenso
+          '#2563eb', // Azul principal
+          '#10b981', // Verde água (tipo tailwind emerald)
+          '#f59e0b', // Amarelo dourado
+          '#ef4444', // Vermelho elegante
+          '#8b5cf6', // Roxo suave
         ],
+
+        borderWidth: this.barChartType === 'pie' ? 0 : 0.5,
+        borderColor: 'black',
       },
     ],
   };
