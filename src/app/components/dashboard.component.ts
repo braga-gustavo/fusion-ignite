@@ -13,25 +13,35 @@ import { KPIS } from '../data/kpis';
 })
 export class DashboardComponent {
   kpis = KPIS;
-
   barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     maintainAspectRatio: false,
-    plugins:{
-      legend:{
-        display:true,
-        labels:{
-          // usePointStyle: true,
-          // pointStyle: 'line',
+    plugins: {
+      legend: {
+        display: true,
+        labels: {
+          generateLabels: (chart) => {
+            if (this.barChartType === 'pie') {
+              const dataset = chart.data.datasets[0];
+              return chart.data.labels!.map((label: any, i: number) => ({
+                text: label,
+                fillStyle: (dataset.backgroundColor as string[])[i],
+                strokeStyle: (dataset.backgroundColor as string[])[i],
+                lineWidth: 1,
+                index: i,
+              }));
+            } else {
+              return [];
+            }
+          },
           color: '#01579b',
-          font:{
+          font: {
             size: 14,
-            weight: 'bold'
-          }
-        }
-      }
-
-    }
+            weight: 'bold',
+          },
+        },
+      },
+    },
   };
 
   barChartType: ChartType = 'bar';
