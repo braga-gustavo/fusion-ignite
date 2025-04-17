@@ -1,3 +1,8 @@
+canvas {
+  height: 2px;
+  width: 1px;
+}
+
 .dashboard {
   padding: 2rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -37,9 +42,20 @@ h1 {
   align-items: center;
   justify-items: center;
   padding: 1.5rem;
-
 }
 
+.chart-container{
+  width: 100%;
+  max-width: 32rem;
+  height: 56vh;
+  margin: auto;
+  position: relative;
+}
+
+.chart-container canvas{
+  width: 100% !important;
+  height: 100% !important;
+}
 .chart-header {
   display: flex;
   justify-content: space-between;

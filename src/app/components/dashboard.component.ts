@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ChartConfiguration, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartType, plugins } from 'chart.js';
 import { NgChartsModule } from 'ng2-charts';
 import { KPIS } from '../data/kpis';
 
@@ -16,6 +16,22 @@ export class DashboardComponent {
 
   barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
+    maintainAspectRatio: false,
+    plugins:{
+      legend:{
+        display:true,
+        labels:{
+          // usePointStyle: true,
+          // pointStyle: 'line',
+          color: '#01579b',
+          font:{
+            size: 14,
+            weight: 'bold'
+          }
+        }
+      }
+
+    }
   };
 
   barChartType: ChartType = 'bar';

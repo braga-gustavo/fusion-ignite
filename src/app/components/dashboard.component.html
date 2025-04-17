@@ -16,11 +16,13 @@
     </div>
   </div>
 
-  <canvas
-    baseChart
-    [data]="barChartData"
-    [type]="barChartType"
-    [options]="barChartOptions"
-  >
-  </canvas>
+  <div class="chart-container">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [type]="barChartType"
+      [options]="barChartOptions"
+    >
+    </canvas>
+  </div>
 </section>
